@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Mes salles</title>
+</head>
+<body>
+ <h1> CineMAnager</h1>
+ <br> <br>
+ <h3>Mes salles</h3>
+ <br> <br>
+ <div th:each="salle : ${lstSalles}">
+	<span th:text="${salle.nomSalle}"/>	
+	<a th:href="@{/detailsSalle/{id}(id=${salle.idSalle})}">Voir</a>
+	<a th:href="@{/modifySalle/{id}(id=${salle.idSalle})}">Modifier</a>
+	<a th:href="@{/deleteSalle/{id}(id=${salle.idSalle})}">Effacer</a>
+	<hr>
+</div>
+
+<a href="/addSalle">Ajouter</a>
+ <br><br>
+<a href="/">Retour</a>
+</body>
+</html>

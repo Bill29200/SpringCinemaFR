@@ -62,11 +62,11 @@ public class CinemaApplication implements CommandLineRunner{
 		  
 		  //............................................
 		  
-			/*
-			 * Salle s1= new Salle("Grande Salle", "Adult", 400); salleManager.add(s1);
-			 * Salle s2= new Salle("La centrale", "Jeune", 500); salleManager.add(s2); Salle
-			 * s3= new Salle("SalleToons", "Enfant", 100); salleManager.add(s3);
-			 */
+			
+			  Salle s1= new Salle("Grande Salle", "Adult", 400); salleManager.add(s1);
+			  Salle s2= new Salle("La centrale", "Jeune", 500); salleManager.add(s2); Salle
+			  s3= new Salle("SalleToons", "Enfant", 100); salleManager.add(s3);
+			 
 		  
 		  //............................................
 		  

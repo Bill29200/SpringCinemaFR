@@ -13,9 +13,9 @@
 	<div th:text="${film.description}"/>
 </div>
 <div th:unless="${mode == 'detailFilm'}")>
-	<form th:action="@{/valid/{m}/{id}(m=${mode},id=${id})}" th:object="${film}" method="post">
+	<form th:action="@{/validFilm/{m}/{id}(m=${mode},id=${id})}" th:object="${film}" method="post">
 		<label for="titre">Titre</label>
-		<input id="titre" th:field="*{titre}"/>
+		<input type="text" id="titre" th:field="*{titre}"/>
 		<span th:if="${#fields.hasErrors('titre')}" th:errors="*{titre}"></span>
 		<br>
 		
@@ -25,7 +25,7 @@
 		<br>
 		
 		<label for="realisateur">Réalisateur</label>
-		<input type="realisateur" id="realisateur" th:field="*{realisateur}"/>
+		<input type="text" id="realisateur" th:field="*{realisateur}"/>
 		<span th:if="${#fields.hasErrors('realisateur')}" th:errors="*{realisateur}"></span>
 		<br>
 		

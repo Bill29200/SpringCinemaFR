@@ -10,18 +10,14 @@
  <h3>Mes films</h3>
  <br> <br>
  <div th:each="film : ${lstFilms}">
-	<span th:text="${film.titre}"/>
-	
-	
-	
-	
-	<a th:href="@{/detailsFilm/{id}(id=${film.idFilm})}">voir</a>
-	<a th:href="@{/modifyFilm/{id}(id=${film.idFilm})}">modifier</a>
-	<a th:href="@{/deleteFilm/{id}(id=${film.idFilm})}">effacer</a>
+	<span th:text="${film.titre}"/>	
+	<a th:href="@{/detailsFilm/{id}(id=${film.idFilm})}">Voir</a>
+	<a th:href="@{/modifyFilm/{id}(id=${film.idFilm})}">Modifier</a>
+	<a th:href="@{/deleteFilm/{id}(id=${film.idFilm})}">Effacer</a>
 	<hr>
 </div>
 
-<a href="/addFilm">ajouter</a>
+<a href="/addFilm">Ajouter</a>
  <br><br>
 <a href="/">Retour</a>
 </body>

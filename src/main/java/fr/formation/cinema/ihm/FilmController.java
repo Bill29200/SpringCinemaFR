@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import fr.formation.cinema.bll.FilmManager;
+
 import fr.formation.cinema.bo.Film;
+
 
 
 @Controller
@@ -21,7 +23,7 @@ public class FilmController {
 	FilmManager filmManager;
 	
 	@GetMapping("/film")
-	public String index(Model model) {
+	public String indexFilm(Model model) {
 		model.addAttribute("lstFilms",filmManager.getAll());
 		return "film";
 	}
@@ -37,7 +39,7 @@ public class FilmController {
 	
 	@GetMapping("/addFilm")
 	public String addFilm(Model model,Film film) {
-		model.addAttribute("id",0); // j'envoie un attribut id à 0 pour que l'url de retour du formulaire soit conforme à celle du modify
+		model.addAttribute("id",0); 
 		model.addAttribute("mode","addFilm");
 		return "filmForm";
 	}
@@ -47,8 +49,8 @@ public class FilmController {
 		filmManager.deleteById(id);
 		return "redirect:/film";
 	}
-	@PostMapping("/valid/{mode}/{id}")
-	public String valid(Model model, @Valid Film film, BindingResult result, @PathVariable String mode, @PathVariable Integer id) {
+	@PostMapping("/validFilm/{mode}/{id}")
+	public String validFilm(Model model, @Valid Film film, BindingResult result, @PathVariable String mode, @PathVariable Integer id) {
 		if(result.hasErrors()) {
 			return "filmForm";
 		}
@@ -72,5 +74,5 @@ public class FilmController {
 		model.addAttribute("id",id);
 		return "filmForm";
 	}
-
+	
 }
