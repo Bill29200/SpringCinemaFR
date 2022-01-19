@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>lE FILM</title>
+</head>
+<body>
+<div th:if="${mode == 'detailsFilm'}">
+	<div th:text="${film.titre}"/>
+	<div th:text="${film.typeFilm}"/>
+	<div th:text="${film.realisateur}"/>
+	<div th:text="${film.duree}"/>
+	<div th:text="${film.description}"/>
+</div>
+<div th:unless="${mode == 'detailFilm'}")>
+	<form th:action="@{/valid/{m}/{id}(m=${mode},id=${id})}" th:object="${film}" method="post">
+		<label for="titre">Titre</label>
+		<input id="titre" th:field="*{titre}"/>
+		<span th:if="${#fields.hasErrors('titre')}" th:errors="*{titre}"></span>
+		<br>
+		
+		<label for="typeFilm">Type de Film</label>
+		<input id="typeFilm" th:field="*{typeFilm}"/>
+		<span th:if="${#fields.hasErrors('typeFilm')}" th:errors="*{typeFilm}"></span>
+		<br>
+		
+		<label for="realisateur">Réalisateur</label>
+		<input type="realisateur" id="realisateur" th:field="*{realisateur}"/>
+		<span th:if="${#fields.hasErrors('realisateur')}" th:errors="*{realisateur}"></span>
+		<br>
+		
+		<label for="duree">Durée</label>
+		<input type="number" id="duree" th:field="*{duree}"/>
+		<span th:if="${#fields.hasErrors('duree')}" th:errors="*{duree}"></span>
+		<br>
+		
+		<label for="description">Description</label>
+		<input type="text" id="description" th:field="*{description}"/>
+		<span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+		<br>
+	
+		
+		
+		<input type="submit" value="valider">
+	</form>
+</div>
+</body>
+</html>

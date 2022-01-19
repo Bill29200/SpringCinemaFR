@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Détail film</title>
+</head>
+<body>
+<h1> CineMAnager</h1>
+ <br> <br>
+ <h3>Détails de film</h3>
+ <br> <br>
+ 
+ 
+  <p th:text="${film.titre}"></p>  
+  <p th:text="${film.typeFilm}"></p>
+  <p th:text="${film.realisateur}"></p>
+  <p th:text="${film.duree}"></p>
+  <p th:text="${film.description}"></p> 
+ 
+<br> <br>
+<a href="/film">Retour</a>
+
+</body>
+</html>
