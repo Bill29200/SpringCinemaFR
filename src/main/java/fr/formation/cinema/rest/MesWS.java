@@ -11,10 +11,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.formation.cinema.bll.ClientManager;
 import fr.formation.cinema.bll.FilmManager;
+import fr.formation.cinema.bll.ReserverManager;
 import fr.formation.cinema.bll.SalleManager;
 import fr.formation.cinema.bll.SeanceManager;
+import fr.formation.cinema.bo.Client;
 import fr.formation.cinema.bo.Film;
+import fr.formation.cinema.bo.Reserver;
 import fr.formation.cinema.bo.Salle;
 import fr.formation.cinema.bo.Seance;
 
@@ -119,4 +123,73 @@ public class MesWS {
 	{
 		seanceManager.modify(seance);
 	}
+	//********************************************************************************
+	@Autowired
+	private ClientManager clientManager;
+	
+	@GetMapping("/WS/client")
+	public List<Client> getAllClient()
+	{
+		return clientManager.getAll();
+	}
+	
+	@GetMapping("/WS/client/{id}")
+	public Client OneClient(@PathVariable("id") Integer id)
+	{
+		return clientManager.getById(id);
+	}
+	
+	@DeleteMapping("/WS/client/{id}")
+	public void deleteClient(@PathVariable("id") Integer id)
+	{
+		clientManager.deleteById(id);
+	}
+	
+	@PostMapping("/WS/client")
+	public void createClient(@RequestBody Client client) 
+	{
+		clientManager.add(client);
+	}
+	@PutMapping("/WS/client")
+	
+	public void modifyClient(@RequestBody Client client)
+	{
+		clientManager.modify(client);
+	}
+	
+	//********************************************************************************
+		@Autowired
+		private ReserverManager reserverManager;
+		
+		@GetMapping("/WS/reserver")
+		public List<Reserver> getAllReserver()
+		{
+			return reserverManager.getAll();
+		}
+		
+		@GetMapping("/WS/reserver/{id}")
+		public Reserver OneReserver(@PathVariable("id") Integer id)
+		{
+			return reserverManager.getById(id);
+		}
+		
+		@DeleteMapping("/WS/reserver/{id}")
+		public void deleteReserver(@PathVariable("id") Integer id)
+		{
+			reserverManager.deleteById(id);
+		}
+		
+		@PostMapping("/WS/reserver")
+		public void createReserver(@RequestBody Reserver reserver) 
+		{
+			reserverManager.add(reserver);
+		}
+		@PutMapping("/WS/reserver")
+		
+		public void modifyReserver(@RequestBody Reserver reserver)
+		{
+			reserverManager.modify(reserver);
+		}
+		
+
 }

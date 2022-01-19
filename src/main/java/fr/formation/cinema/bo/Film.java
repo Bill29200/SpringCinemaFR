@@ -20,18 +20,25 @@ public class Film {
 	@GeneratedValue
 	private Integer idFilm;
 	
-//	@NotBlank(message = "Le titre est obligatoire")
+	//@NotBlank(message = "Le titre est obligatoire")
 	private String titre;
 	private String typeFilm;
 	private String realisateur;
+	private int duree;
+	private String description;
 	
-	
-	public Film(String titre, String typeFilm, String realisateur) {
+	public Film(String titre, String typeFilm, String realisateur,
+			int duree, String description) {
 		super();
 		this.titre = titre;
 		this.typeFilm = typeFilm;
 		this.realisateur = realisateur;
+		this.duree = duree;
+		this.description = description;
 	}
+	
+	
+	
 	
 	
 	

@@ -1,5 +1,6 @@
 package fr.formation.cinema.bo;
 
+import java.sql.Time;
 import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
@@ -23,9 +24,10 @@ public class Seance {
 		@GeneratedValue
 		private Integer IdSeance;
 		
-		@NotBlank(message = "la date de début de la séance est obligatoire")
-		private LocalDate dateSeanceD;
-		private LocalDate dateSeanceF;
+		//@NotBlank(message = "la date de début de la séance est obligatoire")
+		private LocalDate dateSeance;
+		private Time heureDebut;
+		private Time heureFin;
 		private double prixSeance;
 		
 		@ManyToOne(cascade = CascadeType.ALL)
@@ -34,14 +36,19 @@ public class Seance {
 		@ManyToOne(cascade = CascadeType.ALL)
 		private Salle salle;
 
-		public Seance(LocalDate dateSeanceD, LocalDate dateSeanceF, double prixSeance, Film film, Salle salle) {
+		public Seance( LocalDate dateSeance,
+				Time heureDebut, Time heureFin, double prixSeance, Film film, Salle salle) {
 			super();
-			this.dateSeanceD = dateSeanceD;
-			this.dateSeanceF = dateSeanceF;
+			this.dateSeance = dateSeance;
+			this.heureDebut = heureDebut;
+			this.heureFin = heureFin;
 			this.prixSeance = prixSeance;
 			this.film = film;
 			this.salle = salle;
 		}
+
+		
+
 		
 		
 

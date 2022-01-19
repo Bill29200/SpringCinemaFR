@@ -21,7 +21,7 @@ public class Salle {
 	@GeneratedValue
 	private Integer IdSalle;
 	
-	@NotBlank(message = "Le nom de la salle est obligatoire")
+	//@NotBlank(message = "Le nom de la salle est obligatoire")
 	private String nomSalle;
 	private String typeSalle;
 	private int capacite;
