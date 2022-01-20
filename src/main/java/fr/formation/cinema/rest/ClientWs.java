@@ -21,19 +21,19 @@ public class ClientWs {
 	@Autowired
 	private ClientManager clientManager;
 	
-	@GetMapping("/WS/clients")
+	@GetMapping("/WS/client")
 	public List<Client> getAllClient()
 	{
 		return clientManager.getAll();
 	}
 	
-	@GetMapping("/WS/clients/{id}")
+	@GetMapping("/WS/client/{id}")
 	public Client OneClient(@PathVariable("id") Integer id)
 	{
 		return clientManager.getById(id);
 	}
 	
-	@DeleteMapping("/WS/clients/{id}")
+	@DeleteMapping("/WS/client/{id}")
 	public void deleteClient(@PathVariable("id") Integer id)
 	{
 		clientManager.deleteById(id);
@@ -44,7 +44,7 @@ public class ClientWs {
 	{
 		clientManager.add(client);
 	}
-	@PutMapping("/WS/clients")
+	@PutMapping("/WS/client")
 	
 	public void modifyClient(@RequestBody Client client)
 	{

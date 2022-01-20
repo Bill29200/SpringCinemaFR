@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import fr.formation.cinema.bll.ReserverManager;
 import fr.formation.cinema.bo.Reserver;
 
-//@Controller
+@Controller
 public class ReserverController {
 
 	@Autowired

@@ -92,14 +92,14 @@ public class CinemaApplication implements CommandLineRunner{
 		  //............................................
 		  
 			
-			/*
-			 * Reserver r1 = new Reserver(c1, se1); reserverManager.add(r1); Reserver r2 =
-			 * new Reserver(c1, se2); reserverManager.add(r2); Reserver r3 = new
-			 * Reserver(c2, se1); reserverManager.add(r3); Reserver r4 = new Reserver(c2,
-			 * se2); reserverManager.add(r4); Reserver r5 = new Reserver(c3, se3);
-			 * reserverManager.add(r5); Reserver r6 = new Reserver(c3, se4);
-			 * reserverManager.add(r6);
-			 */
+			
+			  Reserver r1 = new Reserver(c1, se1); reserverManager.add(r1); 
+			  Reserver r2 = new Reserver(c1, se2); reserverManager.add(r2); 
+			  Reserver r3 = new Reserver(c2, se1); reserverManager.add(r3); 
+			  Reserver r4 = new Reserver(c2, se2); reserverManager.add(r4); 
+			  Reserver r5 = new Reserver(c3, se3); reserverManager.add(r5); 
+			  Reserver r6 = new Reserver(c3, se4); reserverManager.add(r6);
+			 
 			 
 		  
 		  System.out.println("£££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££"
