@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Mes seances</title>
+</head>
+<body>
+ <h1> CineMAnager</h1>
+ <br> <br>
+ <h3>Mes seances </h3>
+ <br> <br>
+ <div th:each="seance : ${lstSeances}">
+	
+	
+	<span th:text="${#temporals.format(seance.dateSeance,'dd/MM/yyyy')}"/>
+	<span th:text="${#temporals.format(seance.heureDebut,'hh:mm')}"/>
+	
+	<a th:href="@{/show/{id}(id=${seance.idSeance})}">voir</a>
+	<a th:href="@{/modify/{id}(id=${seance.idSeance})}">modifier</a>
+	<a th:href="@{/delete/{id}(id=${seance.idSeance})}">effacer</a>
+</div>
+
+<a href="/addSeance">Ajouter</a>
+ <br><br>
+<a href="/">Retour</a>
+</body>
+</html>

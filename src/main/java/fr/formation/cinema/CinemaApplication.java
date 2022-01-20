@@ -3,6 +3,7 @@ package fr.formation.cinema;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.transaction.Transactional;
 
@@ -70,12 +71,12 @@ public class CinemaApplication implements CommandLineRunner{
 		  
 		  //............................................
 		  
-			/*
-			 * Seance se1 = new Seance(null,null,null,12,f1, s1);seanceManager.add(se1);
-			 * Seance se2 = new Seance(null,null,null,20,f2, s2);seanceManager.add(se2);
-			 * Seance se3 = new Seance(null,null,null,20,f1,s3);seanceManager.add(se3);
-			 * Seance se4 = new Seance(null,null,null,20,f2, s3);seanceManager.add(se4);
-			 */
+			
+			  Seance se1 = new Seance(LocalDate.of(2022,10,02),LocalTime.of(12, 0),LocalTime.of(12, 0),12,f1, s1);seanceManager.add(se1);
+			  Seance se2 = new Seance(LocalDate.of(2022, 12, 12),LocalTime.of(12, 0),LocalTime.of(12, 0),20,f2, s2);seanceManager.add(se2);
+			  Seance se3 = new Seance(LocalDate.of(2022,10,02),LocalTime.of(12, 0),LocalTime.of(12, 0),20,f1,s3);seanceManager.add(se3);
+			  Seance se4 = new Seance(LocalDate.of(2022,10,02),LocalTime.of(12, 0),LocalTime.of(12, 0),20,f2, s3);seanceManager.add(se4);
+			 
 		  
 		  //............................................
 		  
