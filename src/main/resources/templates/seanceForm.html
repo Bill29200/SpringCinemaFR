@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div th:if="${mode == 'detailsSeance'}">
+	<div th:text="${#temporals.format(seance.dateSeance,'dd/MM/yyyy')}"/>
+	<div th:text="${#temporals.format(seance.heureFin,'hh:mm')}"/>
+	<div th:text="${seance.prixSeance}"/>
+	<div th:text="${seance.film.titre}"/>
+	<div th:text="${seance.salle.nomSalle}"/>
+	
+</div>
+<div th:unless="${mode == 'detailsSeance'}")>
+	<form th:action="@{/validSeance/{m}/{id}(m=${mode},id=${id})}" th:object="${seance}" method="post">
+		<label for="dateSeance">Date de la seance</label>
+		<input  type ="date" id="dateSeance" th:field="*{dateSeance}"/>
+		<span th:if="${#fields.hasErrors('dateSeance')}" th:errors="*{dateSeance}"></span>
+		<br>
+		
+		<label for="heureDebut">Heure debut</label>
+		<input  type ="time" id="heureDebut" th:field="*{heureDebut}"/>
+		<span th:if="${#fields.hasErrors('heureDebut')}" th:errors="*{heureDebut}"></span>
+		<br> 
+		
+		<label for="heureFin">Heure fin</label>
+		<input type ="time" id="heureFin" th:field="*{heureFin}"/>
+		<span th:if="${#fields.hasErrors('heureFin')}" th:errors="*{heureFin}"></span>
+		<br> 
+		
+		<label for="prixSeance">Prix</label>
+		<input type ="number" id="prixSeance" th:field="*{prixSeance}"/>
+		<span th:if="${#fields.hasErrors('prixSeance')}" th:errors="*{prixSeance}"></span>
+		<br> 
+		
+		<label for="film">Film</label>
+		<input id="film" th:field="*{film}"/>
+		<span th:if="${#fields.hasErrors('film')}" th:errors="*{film}"></span>
+		<br> 
+		
+		<label for="salle">Salle</label>
+		<input id="salle" th:field="*{salle}"/>
+		<span th:if="${#fields.hasErrors('salle')}" th:errors="*{salle}"></span>
+		<br> 
+			
+		
+		<input type="submit" value="valider">
+	</form>
+	<a href="/seance">Retour</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1> CineMAnager</h1>
+ <br> <br>
+ <h3>Details de seance</h3>
+ <br> <br>
+ 
+ 
+  <p th:text="${#temporals.format(seance.dateSeance,'dd/MM/yyyy')}"></p>  
+  <p th:text="${#temporals.format(seance.heureFin,'hh:mm')}"></p>
+  <p th:text="${seance.prixSeance}"> euros</p>
+  <p th:text="${seance.film.titre}"></p>
+  <p th:text="${seance.salle.nomSalle}"></p>
+ 
+<br> <br>
+<a href="/seance">Retour</a>
+</body>
+</html>

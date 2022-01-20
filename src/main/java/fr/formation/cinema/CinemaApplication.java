@@ -54,12 +54,16 @@ public class CinemaApplication implements CommandLineRunner{
 		
 		  System.out.println("£££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££");
 		 
-		 Film f1 =new Film("Training day", "Policier", "Denzel washigton",180, "C'est film d'un nouveau policier avec un ancien policier traitre complisse avec une bande de drogue " );filmManager.add(f1);
-		 Film f2 =new Film("Brave Heart", "Historique", "Mel Gibson",200,
-		  "Un film qui raconte l'histoire de l'icosse avec la grande bretagne et represente l'hero William Wallas "
-		  ); Film f3 =new Film("Titanic", "Romantique", "Cameroon",180,
-		  "l'histoire de la fin d'un grand bateau qui vas traverser l'atlantique de l'angleterre vers l'amerique "
-		  ); filmManager.add(f1);filmManager.add(f2);filmManager.add(f3);
+		  Film f1 = new Film("Training day", "Policier", "Denzel washigton", 180,
+					"C'est film d'un nouveau policier avec un ancien policier traitre complisse avec une bande de drogue ");
+			filmManager.add(f1);
+			Film f2 = new Film("Brave Heart", "Historique", "Mel Gibson", 200,
+					"Un film qui raconte l'histoire de l'icosse avec la grande bretagne et represente l'hero William Wallas ");
+			Film f3 = new Film("Titanic", "Romantique", "Cameroon", 180,
+					"l'histoire de la fin d'un grand bateau qui vas traverser l'atlantique de l'angleterre vers l'amerique ");
+			filmManager.add(f1);
+			filmManager.add(f2);
+			filmManager.add(f3);
 		  
 		  //............................................
 		  
@@ -72,29 +76,31 @@ public class CinemaApplication implements CommandLineRunner{
 		  //............................................
 		  
 			
-			  Seance se1 = new Seance(LocalDate.of(2022,10,02),LocalTime.of(12, 0),LocalTime.of(12, 0),12,f1, s1);seanceManager.add(se1);
-			  Seance se2 = new Seance(LocalDate.of(2022, 12, 12),LocalTime.of(12, 0),LocalTime.of(12, 0),20,f2, s2);seanceManager.add(se2);
-			  Seance se3 = new Seance(LocalDate.of(2022,10,02),LocalTime.of(12, 0),LocalTime.of(12, 0),20,f1,s3);seanceManager.add(se3);
-			  Seance se4 = new Seance(LocalDate.of(2022,10,02),LocalTime.of(12, 0),LocalTime.of(12, 0),20,f2, s3);seanceManager.add(se4);
+			  Seance se1 = new Seance(LocalDate.of(2022, 12, 12),LocalTime.of(12, 10),LocalTime.of(12, 10),12.0,f1, s1);seanceManager.add(se1);
+			  Seance se2 = new Seance(null,null,null,20,f2, s2);seanceManager.add(se2);
+			  Seance se3 = new Seance(null,null,null,20,f1,s3);seanceManager.add(se3);
+			  Seance se4 = new Seance(null,null,null,20,f2, s3);seanceManager.add(se4);
 			 
 		  
 		  //............................................
 		  
-			/*
-			 * Client c1 = new Client("Mohamad","Ali","0784512698"); clientManager.add(c1);
-			 * Client c2 = new Client("Mike","Tysson","0654978102"); clientManager.add(c2);
-			 * Client c3 = new Client("Fatima","Sabri","0521369874"); clientManager.add(c3);
-			 */
+			
+			  Client c1 = new Client("Mohamad","Ali","0784512698"); clientManager.add(c1);
+			  Client c2 = new Client("Mike","Tysson","0654978102"); clientManager.add(c2);
+			  Client c3 = new Client("Fatima","Sabri","0521369874"); clientManager.add(c3);
+			  System.out.println(clientManager.getAll());			 
 		  //............................................
 		  
+			
 			/*
-			 * Reserver r1 = new Reserver(c1,se1); reserverManager.add(r1); Reserver r2 =
-			 * new Reserver(c1,se2); reserverManager.add(r2); Reserver r3 = new
-			 * Reserver(c2,se1); reserverManager.add(r3); Reserver r4 = new
-			 * Reserver(c2,se2); reserverManager.add(r4); Reserver r5 = new
-			 * Reserver(c3,se3); reserverManager.add(r5); Reserver r6 = new
-			 * Reserver(c3,se4); reserverManager.add(r6);
+			 * Reserver r1 = new Reserver(c1, se1); reserverManager.add(r1); Reserver r2 =
+			 * new Reserver(c1, se2); reserverManager.add(r2); Reserver r3 = new
+			 * Reserver(c2, se1); reserverManager.add(r3); Reserver r4 = new Reserver(c2,
+			 * se2); reserverManager.add(r4); Reserver r5 = new Reserver(c3, se3);
+			 * reserverManager.add(r5); Reserver r6 = new Reserver(c3, se4);
+			 * reserverManager.add(r6);
 			 */
+			 
 		  
 		  System.out.println("£££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££"
 		  );

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Mise a jour</title>
+</head>
+<body>
+<div th:if="${mode == 'detailsReserer'}">
+	<div th:text="${reserver.client.prenomClient}"/>
+	<div th:text="${reserver.seance}"/>
+</div>
+<div th:unless="${mode == 'detailsReserver'}")>
+	<form th:action="@{/validReserver/{m}/{id}(m=${mode},id=${id})}" th:object="${reserver}" method="post">
+		<label for="client">Client</label>
+		<input id="client" th:field="*{client}"/>
+		<span th:if="${#fields.hasErrors('client')}" th:errors="*{client}"></span>
+		<br>
+		
+		<label for="seance">Seance</label>
+		<input id="seance" th:field="*{seance}"/>
+		<span th:if="${#fields.hasErrors('seance')}" th:errors="*{seance}"></span>
+		<br> 
+			
+		
+		<input type="submit" value="valider">
+	</form>
+	<a href="/reserver">Retour</a>
+</div>
+</body>
+</html>

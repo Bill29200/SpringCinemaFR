@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>lE FILM</title>
+<title>Le film</title>
 </head>
 <body>
 <div th:if="${mode == 'detailsFilm'}">
@@ -12,10 +12,10 @@
 	<div th:text="${film.duree}"/>
 	<div th:text="${film.description}"/>
 </div>
-<div th:unless="${mode == 'detailFilm'}")>
-	<form th:action="@{/validFilm/{m}/{id}(m=${mode},id=${id})}" th:object="${film}" method="post">
+<div th:unless="${mode == 'detailsFilm'}")>
+	<form th:action="@{/valid/{m}/{id}(m=${mode},id=${id})}" th:object="${film}" method="post">
 		<label for="titre">Titre</label>
-		<input type="text" id="titre" th:field="*{titre}"/>
+		<input id="titre" th:field="*{titre}"/>
 		<span th:if="${#fields.hasErrors('titre')}" th:errors="*{titre}"></span>
 		<br>
 		
@@ -25,7 +25,7 @@
 		<br>
 		
 		<label for="realisateur">Réalisateur</label>
-		<input type="text" id="realisateur" th:field="*{realisateur}"/>
+		<input type="realisateur" id="realisateur" th:field="*{realisateur}"/>
 		<span th:if="${#fields.hasErrors('realisateur')}" th:errors="*{realisateur}"></span>
 		<br>
 		
@@ -43,6 +43,7 @@
 		
 		<input type="submit" value="valider">
 	</form>
+	<a href="/">Retour</a>
 </div>
 </body>
 </html>

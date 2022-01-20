@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Les reservation</title>
+</head>
+<body>
+ <h1> CineMAnager</h1>
+ <br> <br>
+ <h3>Mes reservations</h3>
+ <br> <br>
+ <div th:each="reserver : ${lstReservers}">
+<!--  	<span th:text="${reserver.idReserver}"/> -->
+	<span th:text="${reserver.client.prenomClient}"/>
+	<span th:text="${#temporals.format(reserver.seance.dateSeance,'dd-MM-yyyy')}"/>
+	<span th:text="${#temporals.format(reserver.seance.heureDebut,'hh:MM')}"/>
+	
+	<a th:href="@{/detailsReserver/{id}(id=${reserver.idReserver})}">Voir</a>
+	<a th:href="@{/modifyReserver/{id}(id=${reserver.idReserver})}">Modifier</a>
+	<a th:href="@{/deleteReserver/{id}(id=${reserver.idReserver})}">Effacer</a>
+	<hr>
+</div>
+
+<a href="/addReserver">ajouter</a>
+ <br><br>
+<a href="/">Retour</a>
+</body>
+</html>

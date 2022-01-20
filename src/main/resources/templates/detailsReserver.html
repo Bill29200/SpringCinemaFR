@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Reservation détails</title>
+</head>
+<body>
+<h1> CineMAnager</h1>
+ <br> <br>
+ <h3>Details de reservation</h3>
+ <br> <br>
+ 
+ 
+  <p th:text="${reserver.client.nomClient}"></p>  
+  <p th:text="${reserver.client.prenomClient}"></p>  
+  <p th:text="${reserver.seance.prixSeance}"></p>
+ 
+<br> <br>
+<a href="/reserver">Retour</a>
+</body>
+</html>

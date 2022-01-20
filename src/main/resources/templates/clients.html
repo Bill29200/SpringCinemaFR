@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Clients</title>
+</head>
+<body>
+ <h1> CineMAnager</h1>
+ <br> <br>
+ <h3>Clients</h3>
+ <br> <br>
+ <div th:each="client : ${lstClients}">
+	<span th:text="${client.nomClient}"/>
+	
+	<a th:href="@{/detailsClient/{id}(id=${client.idClient})}">voir</a>
+	<a th:href="@{/modifyClient/{id}(id=${client.idClient})}">modifier</a>
+	<a th:href="@{/deleteClient/{id}(id=${client.idClient})}">effacer</a>
+	<hr>
+</div>
+
+<a href="/addClient">ajouter</a>
+ <br><br>
+<a href="/">Retour</a>
+</body>
+</html>
