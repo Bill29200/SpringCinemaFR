@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>client</title>
+</head>
+<body>
+<div th:if="${mode == 'detailsClient'}">
+	<div th:text="${client.nomClient}"/>
+	<div th:text="${client.prenomClient}"/>
+	<div th:text="${client.telephone}"/>
+</div>
+<div th:unless="${mode == 'detailsClient'}")>
+	<form th:action="@{/validClient/{m}/{id}(m=${mode},id=${id})}" th:object="${client}" method="post">
+		<label for="nomClient">Nom</label>
+		<input id="nomClient" th:field="*{nomClient}"/>
+		<span th:if="${#fields.hasErrors('nomClient')}" th:errors="*{nomClient}"></span>
+		<br>
+		
+		<label for="prenomClient">Prenom</label>
+		<input id="prenomClient" th:field="*{prenomClient}"/>
+		<span th:if="${#fields.hasErrors('prenomClient')}" th:errors="*{prenomClient}"></span>
+		<br>
+		
+		<label for="telephone">Tel</label>
+		<input type="text" id="telephone" th:field="*{telephone}"/>
+		<span th:if="${#fields.hasErrors('telephone')}" th:errors="*{telephone}"></span>
+		<br>
+	
+		
+		
+		<input type="submit" value="valider">
+	</form>
+	<a href="/client">Retour</a>
+</div>
+</body>
