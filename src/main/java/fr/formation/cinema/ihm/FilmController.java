@@ -28,6 +28,8 @@ public class FilmController {
 		return "film";
 	}
 	
+	
+	
 	@GetMapping("/detailsFilm/{id}")
 	public String detailsFilm(Model model,@PathVariable("id") Integer id) {
 		Film film = filmManager.getById(id);

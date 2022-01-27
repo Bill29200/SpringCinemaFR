@@ -1,28 +1,244 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Mes films</title>
-</head>
-<body>
- <h1> CineMAnager</h1>
- <br> <br>
- <h3>Mes films</h3>
- <br> <br>
- <div th:each="film : ${lstFilms}">
-	<span th:text="${film.titre}"/>
-	
-	
-	
-	
-	<a th:href="@{/detailsFilm/{id}(id=${film.idFilm})}">voir</a>
-	<a th:href="@{/modifyFilm/{id}(id=${film.idFilm})}">modifier</a>
-	<a th:href="@{/deleteFilm/{id}(id=${film.idFilm})}">effacer</a>
-	<hr>
-</div>
+<html lang="en">
 
-<a href="/addFilm">ajouter</a>
- <br><br>
-<a href="/">Retour</a>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMAnager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<!-- -$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+   <!-------------> 
+   
+    <!------------HEADER----------------->
+    <header class="bg-dark">
+        <div class="container-fluid">
+            <div class="row">
+                <!------------------->
+                <div class="col-md-1">
+                </div>
+                <!------logo cinema-------->
+                <div class="col-md-2">
+                    <img alt="logo" src="img/logoo.png" height="100 px"  />
+                    
+                </div>
+                <!------------------->
+                <div class="col-md-6">
+                </div>
+                <!--------Authentification--------->
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="text-light">
+                                        Se connecter
+                                    </h3>
+                                </div>
+                            </div>
+                            <!-------->
+                            <div class="row">
+                                <!-------->
+                                <div class="col-md-3">
+                                     
+                                    <button type="button" class="btn btn-outline-warning">
+                                        En
+                                    </button>
+                                </div>
+                                <!-------->
+                                <div class="col-md-9">
+                                     
+                                    <button type="button" class="btn btn-outline-warning">
+                                        Créer un compte
+                                    </button>
+                                </div>
+                                <!-------->
+                            </div>
+                        </div>
+                        <!-----logo personne--->
+                        <div class="col-md-4">
+                            <img alt="personne" src="img/personne.png" class="rounded-circle" height="80 px"/>
+                        </div>
+                        <!-------->
+                    </div>
+                </div>
+            </div>
+        </div> 
+        
+        <!-------------------MENU------------------------>
+         <!--------------MENU--------------------------------------------> 
+         <nav class="navbar navbar-expand-lg bg-warning navbar-light  rounded">
+            
+            <div class="container">
+                
+                <a class="navbar-brand d-none d-sm-block" href="#" >CineMAnager</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CINEMAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/film">FILMS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CINEPASS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">OFFRES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TECH</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-warning" type="submit">Search</button>
+                </form>
+            </div>
+    </div>
+    </nav>
+    </header>
+  <!-- -$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->    
+    <div>
+	</div>
+  <!-- -$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ --> 
+    <!------------fin HEADER----------------->
+  	<div class="container">
+
+		<div class="row">
+
+			<div class="col-3 ml-1 p-3" th:each="film : ${lstFilms}">
+
+
+				<div class="card text-center">
+
+					<div class="bg-image hover-overlay ripple"
+						data-mdb-ripple-color="light">
+						<img alt="poster" th:src="${film.poster}" class="img-fluid pt-3" />
+					</div>
+
+					<div class="card-body">
+						<h5 class="card-title text-dark" th:text="${film.titre}"></h5>
+						<a th:href="@{/detailsFilm/{id}(id=${film.idFilm})}"
+							class="btn btn-outline-warning">Détails</a>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+	</div>
+	<!-- -$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+	<div>
+	</div>
+	<!-- -$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+    <!------------DEBUT FOOTER----------------->
+    <footer class="bg-secondary">
+        <div class="container-fluid">
+            <div class="row text-light ">
+                <!-----------------1er partie footer--------------------->
+                <div class="col-md-3 text-center">
+                   <h7>cineMAnager</h7> 
+                    <div >
+                        <img alt="logo" src="img/logoo.png" height="100 px" />
+                    </div>
+                    <br>
+                    <div>
+                        <img alt="Facebook" src="img/fb.png" height="30 px"class="rounded-circle" />
+                        <img alt="Youtube" src="img/yt.png" height="30 px" class="rounded-circle"/>
+                        <img alt="Instagram" src="img/in.png" height="30 px" class="rounded-circle" />
+                        <img alt="LinkedIn" src="img/lk.png" height="30 px" class="rounded-circle"/>
+                        <img alt="Twitter" src="img/tw.png" height="30 px"class="rounded-circle" />
+                    </div>
+                   <br>
+                </div>
+                <!----------------2eme partie footer---------------------->
+                <div class="col-md-2 ">
+                    <h7 >
+                        Cinémas dans vos villes
+                    </h7>
+                    <ul class="list-unstyled text-dark">
+                        <li class="list-item">
+                            Cinémas à Paris
+                        </li>
+                        <li class="list-item">
+                            Cinémas à Nantes
+                        </li>
+                        <li class="list-item">
+                            Cinémas à Brest
+                        </li>
+                        <li class="list-item">
+                            Cinémas à Marseille
+                        </li>
+                        <li class="list-item">
+                            Cinémas à Bordeaux
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!----------------3eme partie footer---------------------->
+                <div class="col-md-5 text-center ">
+                    <h7 >
+                        Applications 
+                    </h7>
+                    <br>
+                    <p class="text-dark">
+                        Réservez et retrouvez vos e-billets grâce à notre application mobile
+                        <br> <br>
+                         <img alt="appStor" src="img/appStore.png" height="30 px" />
+                         <span> 
+                         <img alt="googlePlay" src="img/googlePlay.png" height="32 px" />
+                    </p>             
+                </div>
+                <!-------------------4eme partie footer----------------------------------------->
+                <div class="col-md-2 ">
+                    <h7 >
+                        À propos
+                    </h7>
+                    <ul class="list-unstyled text-dark ">
+                        <li class="list-item">
+                            CinéPass
+                        </li>
+                        <li class="list-item">
+                            CinéCartes
+                        </li>
+                        <li class="list-item">
+                            4DX
+                        </li>
+                        <li class="list-item">
+                            ScreenX
+                        </li>
+                        <li class="list-item">
+                            3D
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-------------------------------------->
+                
+            </div>
+            <!----------------CopyRight----------->
+            
+        </div>
+        <div class="container-fluid px-4 px-lg-5 bg-dark">
+            <p class="m-0 text-center text-white">CineMAnager © 2022 — Tous droits réservés ®</p>
+    </footer>
 </body>
+
 </html>

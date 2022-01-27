@@ -54,16 +54,43 @@ public class CinemaApplication implements CommandLineRunner{
 		
 		  System.out.println("£££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££££");
 		 
-		  Film f1 = new Film("Training day", "Policier", "Denzel washigton", 180,
-					"C'est film d'un nouveau policier avec un ancien policier traitre complisse avec une bande de drogue ");
+		  Film f1 = new Film("Training day", "Crime, Drama, Thriller", 2001, "David Ayer", 122, "A rookie cop spends his first day as a Los Angeles narcotics officer with a rogue detective who isn't what he appears to be.",
+				  "https://m.media-amazon.com/images/M/MV5BMDZkMTUxYWEtMDY5NS00ZTA5LTg3MTItNTlkZWE1YWRjYjMwL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg");
+				  
+				  
 			filmManager.add(f1);
-			Film f2 = new Film("Brave Heart", "Historique", "Mel Gibson", 200,
-					"Un film qui raconte l'histoire de l'icosse avec la grande bretagne et represente l'hero William Wallas ");
-			Film f3 = new Film("Titanic", "Romantique", "Cameroon", 180,
-					"l'histoire de la fin d'un grand bateau qui vas traverser l'atlantique de l'angleterre vers l'amerique ");
+			Film f2 = new Film("Troy", "Drama, History", 2004, "Wolfgang Petersen", 163, "An adaptation of Homer's great epic, the film follows the assault on Troy by the united Greek forces and chronicles the fates of the men involved.",
+					  "https://m.media-amazon.com/images/M/MV5BMTk5MzU1MDMwMF5BMl5BanBnXkFtZTcwNjczODMzMw@@._V1_SX300.jpg");
+			Film f3 = new Film("Fast & Furious 6", "Action",2002, "Justin Lin", 180,
+					"l'histoire de la fin d'un grand bateau qui vas traverser l'atlantique de l'angleterre vers l'amerique ",
+					"https://m.media-amazon.com/images/M/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg");
+			
+			Film f4 = new Film("The Last Samurai", "Action, Drama",2003, "Edward Zwick", 154,
+					"An American military advisor embraces the Samurai culture he was hired to destroy after he is captured in battle. ",
+					"https://m.media-amazon.com/images/M/MV5BMzkyNzQ1Mzc0NV5BMl5BanBnXkFtZTcwODg3MzUzMw@@._V1_SX300.jpg");
+			
+			Film f5 = new Film("Panda kung fu", "movie",2008, "Edward Zwick", 154,
+					"An American military advisor embraces the Samurai culture he was hired to destroy after he is captured in battle. ",
+					"https://m.media-amazon.com/images/M/MV5BODJkZTZhMWItMDI3Yy00ZWZlLTk4NjQtOTI1ZjU5NjBjZTVjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg");
+			Film f6 = new Film("Titanic", "Drama, Romance",1997, "James Cameron", 194 ,
+					"A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic. ",
+					"https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg");
+			Film f7 = new Film("The Lord of the Rings", "Action, Adventure, Drama",2001, "Peter Jackson", 178  ,
+					"A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron. ",
+					"https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg");
+			Film f8 = new Film("Ice Age", "Animation, Adventure, Comedy",2002, "Chris Wedge, Carlos Saldanha", 81  ,
+					"The story revolves around sub-zero heroes: a woolly mammoth, a saber-toothed tiger, a sloth and a prehistoric combination of a squirrel and rat, known as Scrat.",
+					"https://m.media-amazon.com/images/M/MV5BMmYxZWY2NzgtYzJjZC00MDFmLTgxZTctMjRiYjdjY2FhODg3XkEyXkFqcGdeQXVyNjk1Njg5NTA@._V1_SX300.jpg");
+			
 			filmManager.add(f1);
 			filmManager.add(f2);
 			filmManager.add(f3);
+			filmManager.add(f4);
+			filmManager.add(f5);
+			filmManager.add(f6);
+			filmManager.add(f7);
+			filmManager.add(f8);
+			
 		  
 		  //............................................
 		  
@@ -85,7 +112,8 @@ public class CinemaApplication implements CommandLineRunner{
 		  //............................................
 		  
 			
-			  Client c1 = new Client("Mohamad","Ali","0784512698"); clientManager.add(c1);
+			  Client c1 = new Client("Ali","Ali","0784512698"); 
+			      clientManager.add(c1);
 			  Client c2 = new Client("Mike","Tysson","0654978102"); clientManager.add(c2);
 			  Client c3 = new Client("Fatima","Sabri","0521369874"); clientManager.add(c3);
 			  System.out.println(clientManager.getAll());			 

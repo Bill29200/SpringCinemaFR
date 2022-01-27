@@ -19,8 +19,14 @@ public class ReserverManagerImpl implements ReserverManager {
 	@Override
 	@Transactional
 	public void add(Reserver reserver) {
+		/*
+		 * if (reserver.getClient().isInBlacklist()) { throw new
+		 * RuntimeException("le Client : "+reserver.getClient().getNomClient()
+		 * +" est interdit au cinema");
+		 * 
+		 * }
+		 */
 		reserverDAO.save(reserver);
-
 	}
 
 	@Override

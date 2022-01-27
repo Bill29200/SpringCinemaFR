@@ -21,73 +21,27 @@ public class Film {
 	//@NotBlank(message = "Le titre est obligatoire")
 	private String titre;
 	private String typeFilm;
+	private int annee;
 	private String realisateur;
 	private int duree;
 	private String description;
+	private String poster;
+
 	
 	
-	
-	public Film(String titre, String typeFilm, String realisateur,
-			int duree, String description) {
-		super();
+	public Film(String titre, String typeFilm, int annee, String realisateur, int duree, String description,
+			String poster)
+	{
 		this.titre = titre;
 		this.typeFilm = typeFilm;
+		this.annee = annee;
 		this.realisateur = realisateur;
 		this.duree = duree;
 		this.description = description;
+		this.poster = poster;
+		
 	}
-
-	public Integer getIdFilm() {
-		return idFilm;
-	}
-
-	public void setIdFilm(Integer idFilm) {
-		this.idFilm = idFilm;
-	}
-
-	public String getTitre() {
-		return titre;
-	}
-
-	public void setTitre(String titre) {
-		this.titre = titre;
-	}
-
-	public String getTypeFilm() {
-		return typeFilm;
-	}
-
-	public void setTypeFilm(String typeFilm) {
-		this.typeFilm = typeFilm;
-	}
-
-	public String getRealisateur() {
-		return realisateur;
-	}
-
-	public void setRealisateur(String realisateur) {
-		this.realisateur = realisateur;
-	}
-
-	public int getDuree() {
-		return duree;
-	}
-
-	public void setDuree(int duree) {
-		this.duree = duree;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	@Override
-	public String toString() {
-		return "Film [idFilm=" + idFilm + ", titre=" + titre + ", typeFilm=" + typeFilm + ", realisateur=" + realisateur
-				+ ", duree=" + duree + ", description=" + description + "]";
-	}
+	
+	
+	
 }
